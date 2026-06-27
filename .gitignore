@@ -1,0 +1,35 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+PROJECT_CONTEXT.md
+Int
+Steps
+.venv/
+*.pyc
+
+
+# Data (GIS - NEVER push these)
+data/
+raw/
+ss/
+
+# GIS large files
+*.gdb
+*.tif
+*.shp
+*.dbf
+*.shx
+*.geojson
+*.gpkg
+
+# OS / IDE
+.vscode/
+.DS_Store
