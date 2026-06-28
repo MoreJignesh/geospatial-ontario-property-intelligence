@@ -126,3 +126,5 @@ def classify_municipality(df):
     df.loc[conditions[1], "classification"] = "Suburban"
 
     return df
+
+

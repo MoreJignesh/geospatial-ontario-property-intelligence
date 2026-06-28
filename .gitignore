@@ -19,6 +19,7 @@ Steps
 # Data (GIS - NEVER push these)
 data/
 raw/
+archive/
 ss/
 
 # GIS large files
