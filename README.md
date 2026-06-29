@@ -312,7 +312,7 @@ Beyond the technical skills, this project has reinforced the importance of build
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/Ontario_property_intelligence.git
+git clone https://github.com/MoreJignesh/Ontario_property_intelligence.git
 
 cd Ontario_property_intelligence
 ```
