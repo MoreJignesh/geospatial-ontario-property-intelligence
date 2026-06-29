@@ -1,199 +1,354 @@
-Ontario Property Intelligence
+# 🗺️ Ontario Property Intelligence
 
-A geospatial analytics project that transforms Ontario open geospatial datasets into municipality-level infrastructure and property intelligence metrics using GeoPandas.
+> Transforming Ontario's open geospatial data into actionable municipal intelligence using Python, GeoPandas, and spatial analytics.
 
-Project Overview
+---
 
-Property valuation and market intelligence rely heavily on spatial context. This project demonstrates how open geospatial datasets can be transformed into analytics that support municipal comparison, infrastructure assessment, and future property intelligence applications.
+## 📖 Overview
 
-The project implements an end-to-end GIS ETL pipeline that ingests Ontario government datasets, validates and cleans spatial data, performs geospatial analysis, and exports Tableau-ready datasets.
+Location plays a significant role in understanding communities, infrastructure, and development potential. This project explores how publicly available Ontario geospatial datasets can be transformed into meaningful municipal-level insights through an automated GIS data pipeline.
 
-Project Objectives
+The goal is to build an end-to-end geospatial analytics workflow—from raw government datasets to business-ready metrics—that demonstrates practical data engineering, spatial analysis, and visualization skills.
 
-This project demonstrates practical geospatial data engineering by:
+This project is inspired by the type of spatial analytics used in property intelligence, land management, and municipal planning.
 
-Building an automated GIS ETL pipeline
-Processing large Ontario spatial datasets
-Performing CRS transformations
-Validating and repairing geometries
-Computing municipality-level spatial metrics
-Performing spatial joins
-Creating infrastructure accessibility indicators
-Producing analytics-ready outputs for visualization
-Datasets
-Dataset	Purpose
-Ontario Municipal Boundaries	Municipality polygons
-Ontario Road Network (ORN)	Road infrastructure
-Ontario Land Cover (future)	Land-use analysis
-Project Architecture
+---
+
+# 🎯 Project Objectives
+
+This project focuses on building a professional geospatial analytics pipeline capable of:
+
+- Loading and processing large GIS datasets
+- Validating and cleaning spatial data
+- Performing Coordinate Reference System (CRS) transformations
+- Calculating municipality-level spatial metrics
+- Integrating transportation infrastructure
+- Creating analytics-ready datasets
+- Exporting data for Tableau dashboards
+- Following modular and scalable data engineering practices
+
+---
+
+# 🗂️ Datasets
+
+The project uses publicly available datasets from the Ontario Government Open Data Portal.
+
+| Dataset | Purpose |
+|----------|---------|
+| Municipal Boundaries | Administrative boundaries for Ontario municipalities |
+| Ontario Road Network (ORN) | Road infrastructure and transportation analysis |
+| Ontario Land Cover *(Planned)* | Land use and environmental analysis |
+
+---
+
+# 🏗️ Project Structure
+
+```text
 Ontario_property_intelligence/
 │
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── raw/                # Original datasets (not tracked in Git)
+│   └── processed/          # Cleaned and processed outputs
 │
 ├── src/
 │   ├── ingestion/
+│   │   └── inspect_shapefile.py
+│   │
 │   ├── processing/
-│   └── utils/
+│   │   ├── basic_geometry.py
+│   │   └── spatial_metrics.py
 │
 ├── outputs/
 │
 ├── main.py
 ├── README.md
 └── requirements.txt
-Workflow
-Raw GIS Data
-      │
-      ▼
+```
+
+---
+
+# ⚙️ Workflow
+
+```text
+Raw Ontario GIS Data
+          │
+          ▼
 Data Ingestion
-      │
-      ▼
+          │
+          ▼
 Data Profiling
-      │
-      ▼
+          │
+          ▼
 Geometry Validation
-      │
-      ▼
+          │
+          ▼
 Data Cleaning
-      │
-      ▼
+          │
+          ▼
 CRS Transformation
-      │
-      ▼
+          │
+          ▼
 Spatial Analysis
-      │
-      ▼
+          │
+          ▼
 Infrastructure Metrics
-      │
-      ▼
+          │
+          ▼
 Business KPIs
-      │
-      ▼
-GeoJSON + CSV Export
-      │
-      ▼
-Tableau Dashboard
-Analytics Pipeline
-Stage 1 — Data Ingestion
-Load GeoJSON
-Load ESRI Shapefiles
-Inspect datasets
-Validate schema
-Stage 2 — Spatial Validation
-Missing geometry detection
-Invalid geometry detection
-CRS verification
-Geometry repair
-Stage 3 — Spatial Processing
-Coordinate system transformation
-Municipality dissolve
-Area calculation (km²)
-Stage 4 — Infrastructure Analytics
+          │
+          ▼
+GeoJSON & CSV Export
+          │
+          ▼
+Interactive Dashboard
+```
 
-Current metrics include:
+---
 
-Municipality Area
-Total Road Length
-Road Density
-Municipality Coverage
+# 🔄 Current Workflow
 
-Future metrics:
+## ✅ 1. Data Ingestion
 
-Accessibility Index
-Connectivity Score
-Development Pressure Index
-Property Intelligence Score
-Current Project Status
-Module	Status
-Data Ingestion	✅
-Data Profiling	✅
-Geometry Validation	✅
-Data Cleaning	✅
-CRS Transformation	✅
-Municipality Analytics	✅
-Road Network Analytics	🚧
-Land Cover Analytics	Planned
-Property Intelligence Score	Planned
-Tableau Dashboard	Planned
-Technologies
-Python
-GeoPandas
-Pandas
-Shapely
-Fiona
-PyProj
-NumPy
-Jupyter Notebook
-Tableau
-Git
-Output Files
+- Load GeoJSON and Shapefiles
+- Inspect dataset structure
+- Validate schema
+- Verify coordinate systems
+
+---
+
+## ✅ 2. Data Profiling
+
+- Dataset dimensions
+- Attribute inspection
+- Missing value checks
+- Geometry summaries
+
+---
+
+## ✅ 3. Spatial Validation
+
+- Missing geometry detection
+- Invalid geometry identification
+- CRS verification
+- Geometry consistency checks
+
+---
+
+## ✅ 4. Data Cleaning
+
+- Remove invalid records
+- Standardize geometry
+- Prepare data for analysis
+
+---
+
+## ✅ 5. CRS Transformation
+
+Spatial calculations require projected coordinate systems rather than geographic coordinates.
+
+The project converts all datasets to **EPSG:3347 (Statistics Canada Lambert Projection)** to ensure accurate distance and area calculations.
+
+---
+
+## ✅ 6. Municipality Analytics
+
+Current municipality metrics include:
+
+- Municipality Area (km²)
+- Geometry validation
+- CRS consistency
+
+---
+
+## 🚧 7. Road Network Analytics
+
+Currently under development.
+
+Planned metrics include:
+
+- Total Road Length (km)
+- Road Density
+- Infrastructure Accessibility
+- Municipality Connectivity
+
+---
+
+# 📊 Planned Business Metrics
+
+The long-term goal is to generate municipality-level indicators that can support property intelligence and planning.
+
+Examples include:
+
+- 🚗 Road Density
+- 🏘️ Urbanization Score
+- 🌳 Environmental Preservation Index
+- 🏗️ Development Pressure Index
+- 📍 Infrastructure Accessibility Score
+- 🏠 Property Intelligence Score
+
+---
+
+# 📈 Current Project Status
+
+| Module | Status |
+|---------|:------:|
+| Data Ingestion | ✅ |
+| Data Profiling | ✅ |
+| Spatial Validation | ✅ |
+| Data Cleaning | ✅ |
+| CRS Transformation | ✅ |
+| Municipality Analytics | ✅ |
+| Road Network Integration | 🚧 |
+| Road Density Metrics | 🚧 |
+| Land Cover Analytics | ⏳ Planned |
+| Property Intelligence Score | ⏳ Planned |
+| Tableau Dashboard | ⏳ Planned |
+
+---
+
+# 🛠️ Technologies Used
+
+- Python
+- GeoPandas
+- Pandas
+- Shapely
+- Fiona
+- PyProj
+- NumPy
+- Jupyter Notebook
+- Tableau
+- Git & GitHub
+
+---
+
+# 📤 Outputs
+
+Processed datasets are exported in formats suitable for further analysis and visualization.
+
+```text
 data/processed/
 
 municipal_metrics.geojson
 municipal_analytics.geojson
 municipality_summary.csv
 road_density_metrics.csv
-Example Metrics
-Municipality	Area (km²)	Road Length (km)	Road Density
-Example A	421	632	1.50
-Example B	180	202	1.12
-Visualizations
+```
 
-This section will include:
+---
 
-Municipality map
-Road density map
-Tableau dashboard
-KPI summary
-Choropleth maps
+# 📊 Visualizations
 
-(Add screenshots after dashboard creation.)
+This section will be updated as the project progresses.
 
-Skills Demonstrated
-Geospatial Analytics
-Spatial joins
-CRS transformations
-Geometry validation
-Vector data processing
-Infrastructure analytics
-Data Engineering
-ETL pipeline design
-Data cleaning
-Data validation
-Modular Python architecture
-Automated processing workflows
-Business Analytics
-Infrastructure KPIs
-Municipality ranking
-Accessibility metrics
-Tableau-ready datasets
-Future Enhancements
-Land cover analysis
-Urbanization score
-Development pressure index
-Environmental preservation index
-Interactive dashboard
-Automated report generation
-Property Intelligence Score 2.0
-Key Learning Outcomes
+Planned visualizations include:
 
-This project demonstrates the ability to:
+- Municipality boundary maps
+- Road density choropleth
+- Infrastructure accessibility map
+- Tableau dashboard
+- KPI summary dashboard
 
-Design and implement a production-style GIS ETL pipeline.
-Process and validate large geospatial datasets.
-Perform spatial analysis using GeoPandas.
-Generate business-oriented infrastructure metrics.
-Deliver analytics-ready outputs for downstream visualization tools.
-Running the Project
-git clone https://github.com/yourusername/Ontario_property_intelligence.git
+---
+
+# 💡 Skills Demonstrated
+
+### Geospatial Analysis
+
+- Spatial data processing
+- Coordinate Reference Systems (CRS)
+- Spatial joins
+- Geometry validation
+- Area calculations
+
+### Data Engineering
+
+- Modular ETL pipeline
+- Data cleaning
+- Data validation
+- Automated workflows
+- Reproducible project structure
+
+### Analytics
+
+- Infrastructure metrics
+- Municipal comparison
+- KPI generation
+- Tableau-ready data preparation
+
+---
+
+# 🚀 Future Enhancements
+
+The project roadmap includes:
+
+- Land cover integration
+- Urban vs. rural analysis
+- Development pressure metrics
+- Accessibility scoring
+- Municipality ranking
+- Interactive Tableau dashboard
+- Automated reporting
+- Property Intelligence Score 2.0
+
+---
+
+# 📚 What I Learned
+
+This project has been an opportunity to deepen my understanding of geospatial data engineering and analytics. Along the way, I've gained hands-on experience with:
+
+- Building modular GIS processing pipelines
+- Working with large government geospatial datasets
+- Performing CRS transformations correctly
+- Validating and repairing spatial geometries
+- Creating reproducible spatial analysis workflows
+- Designing datasets that are ready for visualization and business reporting
+
+Beyond the technical skills, this project has reinforced the importance of building clean, maintainable code that can scale as new datasets and analytics are added.
+
+---
+
+# ▶️ Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/Ontario_property_intelligence.git
 
 cd Ontario_property_intelligence
+```
 
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
+Run the project:
+
+```bash
 python main.py
-License
+```
 
-This project uses publicly available Ontario Open Data datasets for educational and portfolio purposes.
+---
 
+# 📌 Notes
+
+- Raw GIS datasets are intentionally excluded from version control due to their size.
+- Processed outputs and summary datasets are generated through the ETL pipeline.
+- The project is designed to be modular, making it easy to extend with additional datasets and analytics.
+
+---
+
+# 📄 License
+
+This project uses publicly available datasets provided through the Ontario Government Open Data program.
+
+The code in this repository is intended for educational, research, and portfolio purposes.
+
+---
+
+## 👋 Thanks for Visiting
+
+Thanks for taking the time to explore this project!
+
+I'm continuing to expand it with additional datasets, richer spatial analytics, and interactive dashboards. Feedback, suggestions, and discussions are always welcome.
