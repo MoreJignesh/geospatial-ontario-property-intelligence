@@ -6,9 +6,9 @@
 
 ## 📖 Overview
 
-Location plays a significant role in understanding communities, infrastructure, and development potential. This project explores how publicly available Ontario geospatial datasets can be transformed into meaningful municipal-level insights through an automated GIS data pipeline.
+Location plays a significant role in understanding communities, infrastructure, and development potential. This project explores how publicly available Ontario geospatial datasets can be transformed into meaningful municipal level insights through an automated GIS data pipeline.
 
-The goal is to build an end-to-end geospatial analytics workflow—from raw government datasets to business-ready metrics—that demonstrates practical data engineering, spatial analysis, and visualization skills.
+The goal is to build an end-to-end geospatial analytics workflow from raw government datasets to business ready metrics that demonstrates practical data engineering, spatial analysis, and visualization skills.
 
 This project is inspired by the type of spatial analytics used in property intelligence, land management, and municipal planning.
 
